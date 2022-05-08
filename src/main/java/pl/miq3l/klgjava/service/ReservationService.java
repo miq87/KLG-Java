@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
 import pl.miq3l.klgjava.model.Person;
+import pl.miq3l.klgjava.model.Place;
 import pl.miq3l.klgjava.model.Reservation;
 import pl.miq3l.klgjava.repo.ReservationRepo;
 
@@ -51,6 +52,9 @@ public class ReservationService {
                 switch(k) {
                     case "price":
                         updated.setPrice((Double)v);
+                        break;
+                    case "place":
+                        updated.setPlace(mapper.convertValue(v, Place.class));
                         break;
                     case "tenant":
                         updated.setTenant(mapper.convertValue(v, Person.class));
