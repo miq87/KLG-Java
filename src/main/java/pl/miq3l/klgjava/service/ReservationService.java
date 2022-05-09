@@ -38,6 +38,7 @@ public class ReservationService {
         newRes.setPrice(newRes.getPlace().getUnitPrice() * days);
 
         for (Reservation oldRes : reservations) {
+            if(oldRes.getId().equals(newRes.getId())) continue;
             if(isReservationBetween(oldRes, newRes)) {
                 canBook = false;
             }
@@ -74,20 +75,20 @@ public class ReservationService {
                         updated.setTenant(mapper.convertValue(v, Person.class));
                         break;
                     case "landlord":
-                        updated.setTenant(mapper.convertValue(v, Person.class));
+                        updated.setLandlord(mapper.convertValue(v, Person.class));
                         break;
                     case "dateFrom":
                         try {
-                            updated.setDateFrom(dateFormat.parse((String)v));
+                            updated.setDateFrom(dateFormat.parse((String) v));
                         } catch (ParseException e) {
-                            System.out.println("Wrong date format");
+                            e.printStackTrace();
                         }
                         break;
                     case "dateTo":
                         try {
-                            updated.setDateTo(dateFormat.parse((String)v));
+                            updated.setDateTo(dateFormat.parse((String) v));
                         } catch (ParseException e) {
-                            System.out.println("Wrong date format");
+                            e.printStackTrace();
                         }
                         break;
                 }
