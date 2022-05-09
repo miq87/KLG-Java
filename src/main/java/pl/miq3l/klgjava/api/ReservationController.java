@@ -1,7 +1,6 @@
 package pl.miq3l.klgjava.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import pl.miq3l.klgjava.model.Reservation;
 import pl.miq3l.klgjava.service.ReservationService;
@@ -58,6 +57,11 @@ public class ReservationController {
     @GetMapping("/place")
     public List<Reservation> getReservationsByPlaceName(@RequestParam String name) {
         return reservationService.getReservationsByPlaceName(name);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        reservationService.delete(id);
     }
 
 }
