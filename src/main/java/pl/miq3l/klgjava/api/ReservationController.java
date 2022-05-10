@@ -60,8 +60,8 @@ public class ReservationController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        reservationService.delete(id);
+    public void deleteById(@PathVariable Long id) {
+        reservationService.deleteById(id);
     }
 
 }

@@ -81,14 +81,14 @@ public class ReservationService {
                         try {
                             updated.setDateFrom(dateFormat.parse((String) v));
                         } catch (ParseException e) {
-                            e.printStackTrace();
+                            System.out.println("Wrong date format");
                         }
                         break;
                     case "dateTo":
                         try {
                             updated.setDateTo(dateFormat.parse((String) v));
                         } catch (ParseException e) {
-                            e.printStackTrace();
+                            System.out.println("Wrong date format");
                         }
                         break;
                 }
@@ -114,7 +114,7 @@ public class ReservationService {
         return reservationRepo.findById(id).orElse(null);
     }
 
-    public void delete(Long id) {
+    public void deleteById(Long id) {
         reservationRepo.deleteById(id);
     }
 

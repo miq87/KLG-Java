@@ -10,12 +10,12 @@ import java.util.List;
 
 @Repository
 public interface ReservationRepo extends JpaRepository<Reservation, Long> {
-    @Query("SELECT r FROM Reservation r JOIN r.tenant t WHERE t.name = :name")
+    @Query("SELECT r FROM Reservation r JOIN FETCH r.tenant t WHERE t.name = :name")
     List<Reservation> getReservationsByTenantName(@Param("name") String name);
 
-    @Query("SELECT r FROM Reservation r JOIN r.place p WHERE p.name = :name")
+    @Query("SELECT r FROM Reservation r JOIN FETCH r.place p WHERE p.name = :name")
     List<Reservation> getReservationsByPlaceName(@Param("name") String name);
 
-    @Query("SELECT r FROM Reservation r JOIN r.landlord l WHERE l.name = :name")
+    @Query("SELECT r FROM Reservation r JOIN FETCH r.landlord l WHERE l.name = :name")
     List<Reservation> getReservationsByLandlordName(@Param("name") String name);
 }
