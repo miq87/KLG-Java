@@ -1,9 +1,7 @@
 package pl.miq3l.klgjava.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.miq3l.klgjava.model.Person;
 import pl.miq3l.klgjava.service.PersonService;
 
@@ -23,6 +21,11 @@ public class PersonController {
     @GetMapping("/all")
     public List<Person> findAll() {
         return personService.findAll();
+    }
+
+    @PostMapping("/save")
+    public Person save(@RequestBody Person person) {
+        return personService.save(person);
     }
 
 }
