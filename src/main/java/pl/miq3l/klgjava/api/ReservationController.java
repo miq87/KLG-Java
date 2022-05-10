@@ -29,7 +29,7 @@ public class ReservationController {
         return reservationService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public Reservation save(@RequestBody Reservation reservation) {
         return reservationService.save(reservation);
     }

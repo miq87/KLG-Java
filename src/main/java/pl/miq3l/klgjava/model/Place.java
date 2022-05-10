@@ -18,4 +18,12 @@ public class Place {
     private Double unitPrice;
     private Double placeArea;
     private String description;
+
+    public Place(String name, Double unitPrice, Double placeArea, String description) {
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.placeArea = placeArea;
+        this.description = description;
+    }
+
 }

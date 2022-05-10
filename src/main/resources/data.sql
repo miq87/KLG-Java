@@ -1,7 +1,7 @@
 INSERT INTO Person (id, name) VALUES (1, 'Jan Kowalski');
 INSERT INTO Person (id, name) VALUES (2, 'Magdalena Nowak');
-INSERT INTO Person (id, name) VALUES (3, 'Robert Makowski');
-INSERT INTO Person (id, name) VALUES (4, 'Marta Lewandowska');
+INSERT INTO Person (id, name) VALUES (3, 'Robert Mak');
+INSERT INTO Person (id, name) VALUES (4, 'Ania Kowalska');
 
 INSERT INTO Place (id, name, unit_price, place_area, description) VALUES (1, 'Hilton', 400, 80, 'Opis');
 INSERT INTO Place (id, name, unit_price, place_area, description) VALUES (2, 'Amber', 200, 30, 'Opis');

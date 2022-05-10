@@ -36,11 +36,11 @@ public class ReservationServiceTests {
     public void getReservationsByPlaceName() throws Exception {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Person landlord = new Person(1L, "Jan Kowalski");
-        Person tenant = new Person(2L, "Magdalena Nowak");
-        Place place = new Place(1L, "Hilton", 400.0, 80.0, "Opis");
+        Person landlord = new Person("Jan Kowalski");
+        Person tenant = new Person("Magdalena Nowak");
+        Place place = new Place("Hilton", 400.0, 80.0, "Opis");
 
-        Reservation reservation = Reservation.builder().id(1L)
+        Reservation reservation = Reservation.builder()
                 .tenant(tenant).landlord(landlord)
                 .dateFrom(dateFormat.parse("2022-05-01 12:00:00"))
                 .dateTo(dateFormat.parse("2022-05-03 18:00:00"))
